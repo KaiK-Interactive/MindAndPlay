@@ -1,2 +1,2 @@
 # MindAndPlay
-Mind and Play is our school App development project
+Mind and Play is a school App development project
