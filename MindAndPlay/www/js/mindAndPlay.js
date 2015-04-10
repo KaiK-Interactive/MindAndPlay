@@ -4,7 +4,7 @@
  */
 
 xmlhttp = new XMLHttpRequest();
-xmlhttp.open("GET","userData.xml",false);
+xmlhttp.open("GET","./xml/userData.xml",false);
 xmlhttp.send();
 xmlDoc = xmlhttp.responseXML;
 
