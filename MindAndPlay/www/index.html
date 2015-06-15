@@ -18,29 +18,61 @@
      KIND, either express or implied.  See the License for the
     specific language governing permissions and limitations
     under the License.
+
+    © 2015 
+    Version 23.04.2015
+    
 -->
-<html>
+<html lang="de">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>MindAndPlay</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+       
+        <header>
+            <!-- Logo -->
+            <img id="logo" src="img/MindAndPlay.png">
+        </header>
+        
+        <section>
+            <h2 class="mind">Mind and Play</h2>
+            <b class ="userName"></b> <b class="score"></b>
+        </section>
+        
+        <section class="play">
+            
+            <h3 class="index"><a class="playButton" href="kategorien.html">PLAY</a></h3>
+        
+        </section>
+        
+        <section class="archievments">
+            
+            <h3 class="index" onclick="">ERFOLGE</h3>
+        
+        </section>
+        
+        <section class="profil">
+            
+            <h3 class="index" onclick="">PROFIL</h3>
+            
+        </section>
+        
+        <footer>
+            
+            <!-- Copyright Zahnrad Version -->
+            <section class="copyright">© 2015</section>
+            <section class="version">0.2</section>
+            <section class="options"><a href="options.html"><img class="options" src="img/cog-147414_1280.png"></a></section>
+            
+        </footer>
+  
+         <script src="js/mindAndPlay.js"></script>   
+            
     </body>
 </html>
