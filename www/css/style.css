@@ -94,9 +94,10 @@ footer b {
 
 .options{
 
-    width:28%;
-    heigth:28%;
-    margin-left:35%;
+    width:30%;
+    min-width:50px;
+    heigth:30%;
+    margin-left:34.5%;
 
 }
 
@@ -117,7 +118,22 @@ footer b {
 
     text-align: center;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    padding:5%;
     
+}
+
+.standard {
+
+    color:black;
+
+}
+
+.standard:link{
+
+    text-decoration: none;
+    text-transform: uppercase;
+    color:black;
+
 }
 
 #logo{
@@ -131,7 +147,7 @@ footer b {
 #answerTopLeft{
 
     float:left;
-    width:49%;
+    width:47%;
     border:2px solid grey;
     border-radius:5px;
     padding-top:10%;
@@ -143,9 +159,10 @@ footer b {
 #answerTopRight{
 
     float:right;
-    width:49%;
+    width:47%;
     border:2px solid grey;
     border-radius:5px;
+    margin-right:2%;
     padding-top:10%;
     padding-bottom:10%;
     font-size: 25px;
@@ -154,7 +171,7 @@ footer b {
 #answerBottomLeft{
 
     float:left;
-    width:49%;
+    width:47%;
     border:2px solid grey;
     border-radius:5px;
     padding-top:10%;
@@ -165,9 +182,10 @@ footer b {
 #answerBottomRight{
 
     float:right;
-    width:49%;
+    width:47%;
     border:2px solid grey;
     border-radius:5px;
+    margin-right:2%;
     padding-top:10%;
     padding-bottom:10%;
     font-size: 25px;
@@ -179,4 +197,44 @@ footer b {
     text-align: center;
 
 }
+
+#ersteZahl{
+    
+    padding:2%;
+    float:left;
+
+}
+
+#operator{
+
+    padding:2%;
+    float:left;
+
+}
+
+#userErgebnis{
+
+    padding:2%;
+    
+    
+}
+
+#zweiteZahl{
+
+    padding:2%;
+    float:left;
+    
+}
+
+@media screen and (min-width:1000px){
+
+    .options{
+    
+        margin-left:35%;
+    
+    }
+    
+
+}
+
 
