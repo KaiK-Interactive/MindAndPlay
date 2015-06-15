@@ -18,7 +18,10 @@
     - Mathe
 */
 
-  var question;
+var question; 
+var kategorie;
+var richtig = 0;
+var falsch = 0;
 
 // Fragen-Objekt Prototype
 function Question( id, question, correctAnswer, answer2, answer3, answer4){
@@ -32,8 +35,18 @@ function Question( id, question, correctAnswer, answer2, answer3, answer4){
 
 };
 
+function run(kate){
+    
+    kategorie = kate;
+     
+    loadQuestion();
+    
+         
+};
+
 /*
- * Funktion muss beim ersten Start der App aufgerufen werden um die Fragen im localen Speicher abzulegen.
+ * Beispiel für das Speichern von Fragen
+ * seit dem 10.06.2015 nur noch als Beispiel
 */
 function saveQuestionsOnDevice(){
     
@@ -60,12 +73,40 @@ function saveQuestionsOnDevice(){
 
 // Lädt eine zufällige Frage
 // TODO: bei neuen Fragen und Themengebiten immer aktualisiren.
-
-function loadQuestion(){
-    //Aus dem String wird wieder ein Array
-    var temp = JSON.parse(window.localStorage.getItem("history"));
+/*
     
-    get = randomNumber(3);
+*/
+function loadQuestion(){
+    
+  
+    if(kategorie == null){
+    
+        console.log("Keine Kategorie gewählt.");
+        //kategorie = "geschichte";
+    }
+    if(kategorie === "random"){
+        
+        var random = randomNumber(200);
+        console.log(random);
+        if(random < 100){
+    
+            var temp = JSON.parse(window.localStorage.getItem("geschichte"));
+    
+        }
+        if(random > 100){
+        
+            var temp = JSON.parse(window.localStorage.getItem("sport"));
+        
+        }
+        
+    } else {
+        
+    //Aus dem String wird wieder ein Array
+    var temp = JSON.parse(window.localStorage.getItem(kategorie));
+        
+    }
+    console.log(temp.length);
+    get = randomNumber(temp.length);
     
     question = temp[get];
     
@@ -107,6 +148,7 @@ function loadQuestion(){
 
 }
 
+
 function checkAnswer1(){
 
     //console.log(document.getElementById("answerTopLeft").innerHTML);
@@ -115,12 +157,13 @@ function checkAnswer1(){
         document.getElementById("answerTopLeft").style.backgroundImage = "none";
         document.getElementById("answerTopLeft").style.backgroundColor = "green";
         addScore(5);
+        richtig++;
         
     } else {
     
        document.getElementById("answerTopLeft").style.backgroundImage = "none";
        document.getElementById("answerTopLeft").style.backgroundColor = "red";
-    
+       falsch++;
     }
     
     checkAll();
@@ -136,12 +179,13 @@ function checkAnswer2(){
         document.getElementById("answerTopRight").style.backgroundImage = "none";
         document.getElementById("answerTopRight").style.backgroundColor = "green";
         addScore(5);
+        richtig++;
         
     } else {
     
         document.getElementById("answerTopRight").style.backgroundImage = "none";
         document.getElementById("answerTopRight").style.backgroundColor = "red";
-    
+        falsch++;
     }
     
 
@@ -157,12 +201,13 @@ function checkAnswer3(){
         document.getElementById("answerBottomLeft").style.backgroundImage = "none";
         document.getElementsById("answerBottomLeft").style.backgroundColor = "green";
         addScore(5);
+        richtig++;
         
     } else {
     
         document.getElementById("answerBottomLeft").style.backgroundImage = "none";
         document.getElementById("answerBottomLeft").style.backgroundColor = "red";
-        
+        falsch++;
     }
     
     checkAll();
@@ -177,12 +222,13 @@ function checkAnswer4(){
         document.getElementById("answerBottomRight").style.backgroundImage = "none";
         document.getElementById("answerBottomRight").style.backgroundColor = "green";
         addScore(5);
+        richtig++;
         
     } else {
     
         document.getElementById("answerBottomRight").style.backgroundImage = "none";
         document.getElementById("answerBottomRight").style.backgroundColor = "red";
-        
+        falsch++;
     
     }
     
@@ -254,22 +300,30 @@ function resetStyleChanges(){
     document.getElementById("answerTopRight").style.backgroundImage = "linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%)";
     document.getElementById("answerBottomLeft").style.backgroundImage = "linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%)";
     document.getElementById("answerBottomRight").style.backgroundImage = "linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%)";
-    loadQuestion();
-    
+    checkEnd();
 };
 
-
+function checkEnd(){
+    
+        console.log("Richtig:" + richtig);
+        console.log("Falsch:" + falsch);
+    
+        loadQuestion();
+    
+}
 
 
 //zum Testen
-saveQuestionsOnDevice();
+//saveQuestionsOnDevice();
+saveGeschichteOnDevice();
+saveSportOnDevice();
 
 document.getElementById("answerTopLeft").addEventListener("click", checkAnswer1);
 document.getElementById("answerTopRight").addEventListener("click" ,checkAnswer2);
 document.getElementById("answerBottomLeft").addEventListener("click", checkAnswer3);
 document.getElementById("answerBottomRight").addEventListener("click", checkAnswer4);
 
-loadQuestion();
+//loadQuestion();
 
 
 

@@ -1,17 +1,20 @@
 /* MindAndPlay 
-    Version 0.1 29.04.2015
+    Version 0.3 12.06.2015
     created by Kai Karren 
  */
 
 /*TODO:
     
-        - erste Funktionen in die APP einbinden
-        - 
+    
+        
 */
 //User
 
 var userName = "User";
 var score    = 0;
+
+// Anzahl der Fragen die eine Quiz-Runden haben soll.
+var fragenProRunde   = 10;
     
 if (null !== window.localStorage.getItem("userName")) {
     
@@ -25,9 +28,14 @@ if (null !== window.localStorage.getItem("score")) {
 
 }
 
+if (null !== window.localStorage.getItem("fragenProRunde")) {
+    
+    fragenProRunde = parseInt(window.localStorage.getItem("fragenProRunde"));
+
+} 
+
 displayUserName();
 displayScore();
-
 
 
 function setUserName(name) {
@@ -74,6 +82,26 @@ function reload(){
     userName = window.localStorage.getItem("userName");
     var temp = window.localStorage.getItem("score");
     score = parseInt(temp);  
+
+};
+
+function loadFragen(){
+
+    window.localStorage.getItem("fragenProRunde");
+
+};
+
+function changeFragenProRunde(temp){
+
+    fragenProRunde = temp;
+    
+    window.localStorage.setItem("fragenProRunde", fragenProRunde);
+
+};
+
+function getFragenProRunde(){
+
+    return fragenProRunde;
 
 };
 
@@ -132,5 +160,7 @@ function randomColor(){
      document.getElementsByClassName("play")[0].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
 
 };
+
+
 
 
