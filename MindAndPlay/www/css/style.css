@@ -1,0 +1,240 @@
+/**
+ * © 2015 
+ * Version 23.04.2015
+ */
+
+body{
+
+    background:linear-gradient(to top right, #FFEB38 0%, #396AEF 100%);
+    
+}
+.frage {
+
+    background: linear-gradient(to top right, #FFEB38 0%, #396AEF 100%);
+    width:99%;
+    height:auto;
+}
+
+header{
+
+    
+
+}
+
+.play{
+ 
+    width:100%;
+    border: 3px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.playButton{
+
+    text-decoration: none;
+    color:black;
+
+
+}
+.archievments{
+
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.profil{
+
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 5px;
+    
+}
+
+footer{
+
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 5px;
+    
+    
+}
+
+.index{
+
+    text-align: center;
+    margin:5%;
+    font-size: 35px;
+    
+}
+
+footer b {
+
+    font-size: 25px;
+
+}
+
+.version{
+
+   float:right;
+
+}
+.mind{
+
+    text-align:center;
+    font-size: 40px;
+    margin:5%;
+
+}
+.score{
+
+    float:right;
+
+}
+
+.options{
+
+    width:30%;
+    min-width:50px;
+    heigth:30%;
+    margin-left:34.5%;
+
+}
+
+.copyright{
+
+    float:left;
+
+
+}
+
+.question{
+
+    text-align: center;
+
+}
+
+.kategorie{
+
+    text-align: center;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    padding:5%;
+    
+}
+
+.standard {
+
+    color:black;
+
+}
+
+.standard:link{
+
+    text-decoration: none;
+    text-transform: uppercase;
+    color:black;
+
+}
+
+#logo{
+
+    width:35%;
+    heigth:35%;
+    
+
+}
+
+#answerTopLeft{
+
+    float:left;
+    width:47%;
+    border:2px solid grey;
+    border-radius:5px;
+    padding-top:10%;
+    padding-bottom:10%;
+    font-size: 25px;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    
+}
+#answerTopRight{
+
+    float:right;
+    width:47%;
+    border:2px solid grey;
+    border-radius:5px;
+    margin-right:2%;
+    padding-top:10%;
+    padding-bottom:10%;
+    font-size: 25px;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+}
+#answerBottomLeft{
+
+    float:left;
+    width:47%;
+    border:2px solid grey;
+    border-radius:5px;
+    padding-top:10%;
+    padding-bottom:10%;
+    font-size: 25px;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+}
+#answerBottomRight{
+
+    float:right;
+    width:47%;
+    border:2px solid grey;
+    border-radius:5px;
+    margin-right:2%;
+    padding-top:10%;
+    padding-bottom:10%;
+    font-size: 25px;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+}
+
+#changeUserName{
+
+    text-align: center;
+
+}
+
+#ersteZahl{
+    
+    padding:2%;
+    float:left;
+
+}
+
+#operator{
+
+    padding:2%;
+    float:left;
+
+}
+
+#userErgebnis{
+
+    padding:2%;
+    
+    
+}
+
+#zweiteZahl{
+
+    padding:2%;
+    float:left;
+    
+}
+
+@media screen and (min-width:1000px){
+
+    .options{
+    
+        margin-left:35%;
+    
+    }
+    
+
+}
+
+
