@@ -26,6 +26,9 @@ function saveGeschichteOnDevice(){
             new Question( 3,"Auf welche italienische Insel wurde Napoleon verbannt?","Elba","Capri","Sardinien","Palmarola"),
             new Question( 4,"Welches ist die älteste Republik der Welt?","San Marino","BRD","Vatikan","Lichtenstein"),
             new Question( 5,"Wer ist der Vater des Wirtschaftswunders in der BRD?","Ludwig Erhard","Karl Marx","Albert Einstein","Adam Smith"),
+            new Question( 6,"Welche Maschine kam 1929 auf den Markt?","Geschirrspülmaschine","Trockner","Herd","Föhn"),
+            new Question( 7,"Wie heißt Ostpakistan heute?","Bangladesch","Pakistan","Indien","San Marco"),
+            new Question( 8,"Welche stolze Dynastie versank am 12.11.1918 im Kriegsgewühl?","die Habsburger","die Bourbonen","Durrani","Sklaven-Dynastie"),
         
         ];
     
