@@ -16,6 +16,9 @@
     - Sport
     - Chemie
     - Mathe
+    
+    Hardcore Level mit Zeitbegrenzung
+    
 */
 
 var question; 
@@ -105,14 +108,14 @@ function loadQuestion(){
     var temp = JSON.parse(window.localStorage.getItem(kategorie));
         
     }
-    console.log(temp.length);
+    
     get = randomNumber(temp.length);
     
     question = temp[get];
     
     //console.log(question.question);
     document.getElementById("question").innerHTML = question.question;
-    
+    //TODO gegebenenfalls anderer Auswahlmechanismus
     var order = randomNumber(400);
         
     if( order < 100){
@@ -316,6 +319,7 @@ function checkEnd(){
 //zum Testen
 //saveQuestionsOnDevice();
 saveGeschichteOnDevice();
+saveChemieOnDevice();
 saveSportOnDevice();
 
 document.getElementById("answerTopLeft").addEventListener("click", checkAnswer1);

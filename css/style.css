@@ -200,20 +200,24 @@ footer b {
 
 #ersteZahl{
     
-    padding:2%;
+    margin:5%;
     float:left;
+    margin-left:40%;
 
 }
 
 #operator{
 
-    padding:2%;
+    margin:5%;
     float:left;
 
 }
 
 #userErgebnis{
 
+    
+    margin:5%;
+    margin-left:42%;
     padding:2%;
     
     
@@ -221,8 +225,21 @@ footer b {
 
 #zweiteZahl{
 
-    padding:2%;
+    margin:5%;
     float:left;
+    
+}
+
+#aufgabe button{
+    
+    margin-left:46%;
+    
+
+}
+
+#aufgabenText{
+
+    width:100%;
     
 }
 

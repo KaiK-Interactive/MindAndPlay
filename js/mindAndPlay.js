@@ -5,7 +5,8 @@
 
 /*TODO:
     
-    
+    2D Spiel Zahlen und Wörter werden kurz eingeblendet und der Benutzer muss sie in richtiger Reihenfolge wiedergeben
+    Profil mit Statistik zum User und später zu den meist ausgewählten Fragen.
         
 */
 //User
