@@ -1,0 +1,18 @@
+Geschichte:
+„Welches ist die älteste Republik der Welt?“,“San Marino“,“BRD“,“Vatikan“,“Lichtenstein“
+„Wer ist der Vater des Wirtschaftswunders in der BRD?“,“Ludwig Erhard“,“Karl Marx“,“Albert Einstein“,“Adam Smith“
+„Welche Maschine kam 1929 auf den Markt?“,“Geschirrspülmaschine“,“Trockner“,“Herd“,“Föhn“
+„Wie heißt Ostpakistan heute?“,“Bangladesch“,“Pakistan“,“Indien“,“San Marco“
+„Welche stolze Dynastie versank am 12.11.1918 im Kriegsgewühl?“,“die Habsburger“,“die Bourbonen“,“Durrani“,“Sklaven-Dynastie“
+Sport:
+„Mischung zwischen Fußball, Reitsport und Golf?“,“Polo“,“Handball“,“Krocket“,“Baseball“
+„Wer war Fußballweltmeister 2014?“,“Deutschland“,“Frankreich“,“Schweiz“,“Argentinien“
+„Wie viele Tore muß ein Riesenslalom mindestens haben?“,“30“,“50“,“25“,“10“
+„Für welches Land spielte Pele?“,“Brasilien“,“Chile“,“Argentinien“,“Holland“
+„Wer gilt als deutscher Rekordnationalspieler?“,“Lothar Matthäus“,“Franz Beckenbauer“,“Bastian Schweinsteiger“,“Miroslav Klose“
+Chemie:
+„Metall, das bei gewöhnlicher Temperatur flüssig ist?“,“Quecksilber“,“Stahl“,“Gold“,“Platin“
+„Welches Edelgas wird als Leuchtstoff in Röhren verwendet?“,“Neon“,“Helium“,“Argon“,“Xenon“
+„Was sind Erze?“,“Metallhaltige Mineralien“,“Kohlenhydrate“,“Eiweise“,“Ausgangsstoffe für Plastik“
+„Was ist Messing“,“Kupfer-Zinklegierung“,“Kupfer“,“Zink“,“Alamantium“
+„Welches chemische Element wird als Desinfektionsmittel in Bädern verwendet?“,“Chlor“,“Aceton“,“Chrom“,“Neon“
