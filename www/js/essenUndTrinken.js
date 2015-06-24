@@ -22,7 +22,7 @@ function saveEssenUndTrinkenOnDevice(){
         new Question( 13,"Welchen Namen haben kleine PEnne- Nudeln mit kurzer Garzeit","Penette","Penna","Penato","Pennazzi"),
         new Question( 14,"Wie heißt ein deutscher Roséwein","Weißherbst","Roséherbst","Burgunder","Winterrosé"),
         new Question( 15,"Wie heißt eine besonders flache Fischart","Scholle","Schelle","Stelle","Stolle"),
-        new Question( 16,"Woraus wird Krappa hergestellt","Traubentrester","Roggen","Mais,"Apfelmousse"),
+        new Question( 16,"Woraus wird Krappa hergestellt","Traubentrester","Roggen","Mais","Apfelmousse"),
         new Question( 17,"Was ist einer der Inhaltsstoffe von Coca Cola ","Phosphorsäure","Flusssäure","Apfelsaft","Orangensaft"),
         new Question( 18,"Was ist keine Frucht","Tomate","Pfirsisch","Mango","Erdbeere"),
     
