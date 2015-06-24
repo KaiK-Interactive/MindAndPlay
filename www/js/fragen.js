@@ -89,18 +89,27 @@ function loadQuestion(){
     }
     if(kategorie === "random"){
         
-        var random = randomNumber(200);
+        var random = randomNumber(3) + 1;
+    
         console.log(random);
-        if(random < 100){
+        if( random === 1 ){
     
             var temp = JSON.parse(window.localStorage.getItem("geschichte"));
     
-        }
-        if(random > 100){
+        }else if( random === 2 ){
         
             var temp = JSON.parse(window.localStorage.getItem("sport"));
         
+        }else if( random === 3 ){
+        
+            var temp = JSON.parse(window.localStorage.getItem("chemie"));
+        
+        }else if( random === 4 ){
+        
+            var temp = JSON.parse(window.localStorage.getItem("essenUndTrinken"));
+        
         }
+        
         
     } else {
         
@@ -116,36 +125,45 @@ function loadQuestion(){
     //console.log(question.question);
     document.getElementById("question").innerHTML = question.question;
     //TODO gegebenenfalls anderer Auswahlmechanismus
-    var order = randomNumber(400);
+    var order = randomNumber(5) + 1;
+    console.log(order);
         
-    if( order < 100){
+    if( order === 1){
         
         document.getElementById("answerTopLeft").innerHTML = question.correctAnswer;
         document.getElementById("answerTopRight").innerHTML = question.answer2;
         document.getElementById("answerBottomLeft").innerHTML = question.answer3;
         document.getElementById("answerBottomRight").innerHTML = question.answer4;
         
-    } else if( order < 200){
+    } else if( order === 2){
         
         document.getElementById("answerTopLeft").innerHTML = question.answer4;
         document.getElementById("answerTopRight").innerHTML = question.answer2;
         document.getElementById("answerBottomLeft").innerHTML = question.answer3;
         document.getElementById("answerBottomRight").innerHTML = question.correctAnswer;
         
-    } else if( order < 300){
+    } else if( order === 3){
         
-        document.getElementById("answerTopLeft").innerHTML = question.correctAnswer;
-        document.getElementById("answerTopRight").innerHTML = question.answer2;
+        document.getElementById("answerTopLeft").innerHTML = question.answer2;
+        document.getElementById("answerTopRight").innerHTML = question.correctAnswer;
         document.getElementById("answerBottomLeft").innerHTML = question.answer3;
         document.getElementById("answerBottomRight").innerHTML = question.answer4;
         
-    } else if( order < 400){
+    } else if( order === 4){
         
         document.getElementById("answerTopLeft").innerHTML = question.answer2;
         document.getElementById("answerTopRight").innerHTML = question.correctAnswer;
         document.getElementById("answerBottomLeft").innerHTML = question.answer4;
         document.getElementById("answerBottomRight").innerHTML = question.answer3;
         
+    } else if ( order === 5 ){
+    
+        document.getElementById("answerTopLeft").innerHTML = question.answer2;
+        document.getElementById("answerTopRight").innerHTML = question.answer4;
+        document.getElementById("answerBottomLeft").innerHTML = question.correctAnswer;
+        document.getElementById("answerBottomRight").innerHTML = question.answer3;
+    
+    
     }
     
 
@@ -202,7 +220,7 @@ function checkAnswer3(){
     if(document.getElementById("answerBottomLeft").innerHTML === question.correctAnswer){
     
         document.getElementById("answerBottomLeft").style.backgroundImage = "none";
-        document.getElementsById("answerBottomLeft").style.backgroundColor = "green";
+        document.getElementById("answerBottomLeft").style.backgroundColor = "green";
         addScore(5);
         richtig++;
         
@@ -271,7 +289,7 @@ function checkAll(){
     if(document.getElementById("answerBottomLeft").innerHTML === question.correctAnswer){
     
         document.getElementById("answerBottomLeft").style.backgroundImage = "none";
-        document.getElementsById("answerBottomLeft").style.backgroundColor = "green";
+        document.getElementById("answerBottomLeft").style.backgroundColor = "green";
        
         
     } else {
@@ -318,10 +336,12 @@ function checkEnd(){
 
 //zum Testen
 //saveQuestionsOnDevice();
+/*
 saveGeschichteOnDevice();
 saveChemieOnDevice();
 saveSportOnDevice();
-
+saveEssenUndTrinkenOnDevice();
+*/
 document.getElementById("answerTopLeft").addEventListener("click", checkAnswer1);
 document.getElementById("answerTopRight").addEventListener("click" ,checkAnswer2);
 document.getElementById("answerBottomLeft").addEventListener("click", checkAnswer3);
