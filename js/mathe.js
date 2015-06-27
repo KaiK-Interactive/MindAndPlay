@@ -60,6 +60,7 @@ function checkUserInput(){
         document.getElementById("aufgabe").style.backgroundColor = "red";
         document.getElementById("auswertung").innerHTML = ergebnis;
     }
+    
 
 }
 
