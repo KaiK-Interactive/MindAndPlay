@@ -1,7 +1,8 @@
 /**
- * Version 0.3
+ * Version 0.4.3
  * © 2015 kaik-interactive.github.io
  *
+ * last edited on 31.07.2015
  */
 
 /*
@@ -11,13 +12,25 @@
  - loadQuestion erweitern und verbessern
 
     Kategorien:
-    - random
-    - Geschichte
-    - Sport
-    - Chemie
-    - Mathe
+    - random      *
+    - Geschichte  *
+    - Sport       *
+    - Chemie      *
+    - Mathe       *
+    
+    31.07.2015
+    - Spiele
+    - PC
+    - Physik
+    - Informatik
+    - Unnützes Wissen
+    - Allgemeinbildung
+    - Politik
+    - Computer
     
     Hardcore Level mit Zeitbegrenzung
+    
+    ActionListener während den Animationen ausstellen.
     
 */
 
@@ -25,6 +38,8 @@ var question;
 var kategorie;
 var richtig = 0;
 var falsch = 0;
+var disableAnimations = false;
+var counter = 0;
 
 // Fragen-Objekt Prototype
 function Question( id, question, correctAnswer, answer2, answer3, answer4){
@@ -35,7 +50,12 @@ function Question( id, question, correctAnswer, answer2, answer3, answer4){
     this.answer2 = answer2;
     this.answer3 = answer3;
     this.answer4 = answer4; 
-
+    
+    this.changeCorrectAnswer = function(text){
+        
+        this.correctAnswer = text;
+        
+    }
 };
 
 function run(kate){
@@ -81,7 +101,23 @@ function saveQuestionsOnDevice(){
 */
 function loadQuestion(){
     
-  
+    
+    
+    if(counter === 10){
+        saveSession();
+        weiterleitung();
+    
+    }
+    
+    counter++;
+    
+    document.getElementById("answerTopLeft").addEventListener("click", checkAnswer1);
+    document.getElementById("answerTopRight").addEventListener("click" ,checkAnswer2);
+    document.getElementById("answerBottomLeft").addEventListener("click", checkAnswer3);
+    document.getElementById("answerBottomRight").addEventListener("click", checkAnswer4);
+    
+    resetAnimation();
+    
     if(kategorie == null){
     
         console.log("Keine Kategorie gewählt.");
@@ -89,7 +125,7 @@ function loadQuestion(){
     }
     if(kategorie === "random"){
         
-        var random = randomNumber(3) + 1;
+        var random = randomNumber(5) + 1;
     
         console.log(random);
         if( random === 1 ){
@@ -107,6 +143,10 @@ function loadQuestion(){
         }else if( random === 4 ){
         
             var temp = JSON.parse(window.localStorage.getItem("essenUndTrinken"));
+        
+        }else if( random === 5 ){
+        
+            var temp = JSON.parse(window.localStorage.getItem("politik"));
         
         }
         
@@ -177,14 +217,18 @@ function checkAnswer1(){
     
         document.getElementById("answerTopLeft").style.backgroundImage = "none";
         document.getElementById("answerTopLeft").style.backgroundColor = "green";
+        startTrueOrFalse("answerTopLeft");
         addScore(5);
+        saveRichtige(1);
         richtig++;
         
     } else {
     
-       document.getElementById("answerTopLeft").style.backgroundImage = "none";
-       document.getElementById("answerTopLeft").style.backgroundColor = "red";
-       falsch++;
+        document.getElementById("answerTopLeft").style.backgroundImage = "none";
+        document.getElementById("answerTopLeft").style.backgroundColor = "red";
+        startTrueOrFalse("answerTopLeft");
+        saveFalsche(1);
+        falsch++;
     }
     
     checkAll();
@@ -199,13 +243,17 @@ function checkAnswer2(){
     
         document.getElementById("answerTopRight").style.backgroundImage = "none";
         document.getElementById("answerTopRight").style.backgroundColor = "green";
+        startTrueOrFalse("answerTopRight");
         addScore(5);
+        saveRichtige(1);
         richtig++;
         
     } else {
     
         document.getElementById("answerTopRight").style.backgroundImage = "none";
         document.getElementById("answerTopRight").style.backgroundColor = "red";
+        startTrueOrFalse("answerTopRight");
+        saveFalsche(1);
         falsch++;
     }
     
@@ -221,13 +269,17 @@ function checkAnswer3(){
     
         document.getElementById("answerBottomLeft").style.backgroundImage = "none";
         document.getElementById("answerBottomLeft").style.backgroundColor = "green";
+        startTrueOrFalse("answerBottomLeft");
         addScore(5);
+        saveRichtige(1);
         richtig++;
         
     } else {
     
         document.getElementById("answerBottomLeft").style.backgroundImage = "none";
         document.getElementById("answerBottomLeft").style.backgroundColor = "red";
+        startTrueOrFalse("answerBottomLeft");
+        saveFalsche(1);
         falsch++;
     }
     
@@ -242,13 +294,17 @@ function checkAnswer4(){
     
         document.getElementById("answerBottomRight").style.backgroundImage = "none";
         document.getElementById("answerBottomRight").style.backgroundColor = "green";
+        startTrueOrFalse("answerBottomRight");
         addScore(5);
+        saveRichtige(1);
         richtig++;
         
     } else {
     
         document.getElementById("answerBottomRight").style.backgroundImage = "none";
         document.getElementById("answerBottomRight").style.backgroundColor = "red";
+        startTrueOrFalse("answerBottomRight");
+        saveFalsche(1);
         falsch++;
     
     }
@@ -261,6 +317,12 @@ function checkAnswer4(){
 }
 
 function checkAll(){
+    
+    //ActionListener deaktivieren bei Animation
+    document.getElementById("answerTopLeft").removeEventListener("click", checkAnswer1);
+    document.getElementById("answerTopRight").removeEventListener("click" ,checkAnswer2);
+    document.getElementById("answerBottomLeft").removeEventListener("click", checkAnswer3);
+    document.getElementById("answerBottomRight").removeEventListener("click", checkAnswer4);
 
      if(document.getElementById("answerTopLeft").innerHTML === question.correctAnswer){
     
@@ -311,17 +373,31 @@ function checkAll(){
         
     
     }
-    setTimeout('resetStyleChanges()', 2000);
+    setTimeout('endAnimation()', 1000);
+
+};
+
+function endAnimation(){
+
+    startRotate();
+    /*
+    startNextQuestionAnimation("question");
+    startNextQuestionAnimation("answerTopRight");
+    startNextQuestionAnimation("answerTopLeft");
+    */
+    setTimeout('resetStyleChanges()',500);
 
 };
 
 function resetStyleChanges(){
     
+    //startRotate();
     document.getElementById("answerTopLeft").style.backgroundImage = "linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%)";
     document.getElementById("answerTopRight").style.backgroundImage = "linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%)";
     document.getElementById("answerBottomLeft").style.backgroundImage = "linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%)";
     document.getElementById("answerBottomRight").style.backgroundImage = "linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%)";
     checkEnd();
+    //setTimeout('stopRotate',2000);
 };
 
 function checkEnd(){
@@ -331,7 +407,125 @@ function checkEnd(){
     
         loadQuestion();
     
+};
+//OUTDATED!
+/*
+function rotateY(){
+    
+    document.getElementById("question").style.animation = "rotateY 2s infinite";
+    setTimeout('stopRotate', 2000);
+};
+*/
+function stopRotate(){
+    
+    document.getElementsByClassName("question")[0].style.animationPlayState = "paused";
+};
+
+function startRotate(){
+    
+    document.getElementsByClassName("question")[0].style.animationPlayState = "running";
+    
+    setTimeout('stopRotate()',600);
+    
+};
+
+function startTrueOrFalse(id){
+
+    var doc = 'stopTrueOrFalse("' + id + '")';
+    
+    document.getElementById(id).style.animationPlayState = "running";
+    setTimeout(doc,500);
+    
+};
+
+function stopTrueOrFalse(id){
+
+    document.getElementById(id).style.animationPlayState = "paused";
+
+};
+
+function wait(){
+
+    console.log("wait");
+
+};
+
+function startNextQuestionAnimation(id){
+    
+    document.getElementById(id).style.animationPlayState = "running";
+    
+    var temp = 'stopNextQuestionAnimation("' + id + '")';
+    
+
+    setTimeout(temp,2000);
+
+};
+
+function stopNextQuestionAnimation(id){
+
+    document.getElementById(id).style.animationPlayState = "paused";
+
+};
+
+function checkAnimations(){
+    
+    //console.log(document.getElementsByClassName("question")[0].style.transform.valueOf());
+    //console.log(document.getElementById("answerTopRight").style.transform.valueOf());
+
+    document.getElementsByClassName("question")[0].style.transform = "rotate(0deg)";
+    document.getElementById("answerTopLeft").style.transform = "scale(1.0,1.0)";
+    document.getElementById("answerTopRight").style.transform = "scale(1.0,1.0)";
+    document.getElementById("answerBottomLeft").style.transform = "scale(1.0,1.0)";
+    document.getElementById("answerBottomRight").style.transform = "scale(1.0,1.0)";
 }
+
+function weiterleitung(){
+
+    window.document.location.href = "auswertung.html";
+
+};
+
+function reload(){
+    
+    if(kategorie === "random"){
+    
+        window.document.location.href = "frage.html";
+    
+    } else {
+        
+    var temp = kategorie + ".html";
+    window.document.location.href = temp;
+        
+    }
+
+};
+
+function resetAnimation(){
+
+    document.getElementsByClassName("question")[0].style.animation="reset 0.1s 1";
+    document.getElementsByClassName("question")[0].style.animationPlayState = "running";
+    //setTimeout('restoreAnimation',100);
+    restoreAnimation();
+
+};
+
+function restoreAnimation(){
+
+    document.getElementsByClassName("question")[0].style.animation="rotateY 0.5s infinite";
+    document.getElementsByClassName("question")[0].style.animationPlayState = "paused";
+
+};
+
+function saveSession(){
+
+    window.localStorage.setItem("richtig",richtig);
+    window.localStorage.setItem("falsch",falsch);
+    window.localStorage.setItem("kategorie",kategorie);
+
+};
+
+
+
 
 
 //zum Testen
@@ -349,8 +543,54 @@ document.getElementById("answerBottomRight").addEventListener("click", checkAnsw
 
 //loadQuestion();
 
+function testRandom(){
+    
+    var eins = 0;
+    var zwei = 0;
+    var drei = 0;
+    var vier = 0;
+    var fuenf = 0;
 
-
+    for(var i = 0; i < 1000; i++){
+    
+        var random = randomNumber(5) + 1;
+        
+        if(random === 1){
+        
+            eins++;
+        
+        } else if( random === 2 ){
+        
+            zwei++;
+        
+        } else if( random === 3 ){
+        
+            drei++;
+        
+        } else if( random === 4 ){
+        
+            vier++;
+        
+        } else if( random === 5 ){
+        
+            fuenf++;    
+            
+        } else {
+        
+            console.log(random);
+        
+        }
+    
+    
+    }
+    
+    console.log("Eins: " + eins);
+    console.log("Zwei " + zwei);
+    console.log("Drei " + drei);
+    console.log("Vier " + vier);
+    console.log("Fünf " + fuenf);
+    
+};
 
 
 
