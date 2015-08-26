@@ -1,7 +1,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="de.kaikarren.mindandplay" version="1.0.0">
   <name>MindAndPlay</name>
-  <description>Hello World sample application that responds to the deviceready event.</description>
-  <author href="http://phonegap.com" email="support@phonegap.com">PhoneGap Team</author>
+  <description>Mind and Play a simple and funny way to train vour brain</description>
+  <author href="kaikarren.de" email="support@kaikarren.de">KaiK Interactive</author>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="default"/>
