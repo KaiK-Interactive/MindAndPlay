@@ -30,15 +30,85 @@
         
         <section id="changeUserName">
             
-           <p>Neuer UserName:</p>
+            <p>Neuer UserName:</p>
             <input id="newUserName" type="text">
             <p><button onclick="changeUserName()">Bestätigen</button></p>
             
         </section>
+        
+        <section style="text-align:center;">
+        
+            <button onclick="resetScore()">Score zurücksetzen:</button>
+        
+        </section>
+        
+        <section id="design">
+            
+            <p>Design anpassen:</p>
+            
+            <select name="presets">
+                
+            <option id="default">Default</option>
+            <option id="minimal">Minimal</option>
+            <option id="dark">Dunkel</option>
+            
+            </select>
+            <p><button onclick="changePreset()">übernehmen</button></p>
+            <p>Hinweis: Änderungen treten erst nach verlassen der Optionen in Kraft.</p>
+        </section>
     
     
         <script src="js/mindAndPlay.js"></script>
-        <script src="js/fragen.js"></script>
+        
+        <script>
+            
+            loadPreset();
+            
+            var select = getPreset();
+            
+            if(select === "default"){
+            
+                document.getElementById("default").selected = true;
+                
+            } else if(select === "minimal"){
+            
+                document.getElementById("minimal").selected = true;
+            
+            } else if(select === "dark"){
+            
+                document.getElementById("dark").selected = true;
+            
+            }
+            
+            function changePreset(){
+                
+                var de = document.getElementById("default").selected;
+                var min = document.getElementById("minimal").selected;
+                var d = document.getElementById("dark").selected;
+                console.log(de);
+                console.log(min);
+                console.log(d);
+                
+                if(de === true){
+                
+                    console.log("Default");
+                    savePreset("default");
+                
+                } else if(min === true){
+                
+                    console.log("Minimal");
+                    savePreset("minimal");
+                
+                } else if(d === true){
+                
+                    console.log("Dark");
+                    savePreset("dark");
+                
+                }
+                
+            };
+        
+        </script>
     </body>
 
 </html>

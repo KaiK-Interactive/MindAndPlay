@@ -6,7 +6,7 @@
 body{
 
     background:linear-gradient(to top right, #FFEB38 0%, #396AEF 100%);
-    
+    font-size: 25px;
 }
 .frage {
 
@@ -15,56 +15,52 @@ body{
     height:auto;
 }
 
-header{
-
-    
-
-}
-
-.play{
- 
-    width:100%;
-    border: 3px solid black;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.playButton{
-
-    text-decoration: none;
-    color:black;
-
-
-}
-.archievments{
-
-    width: 100%;
-    border: 3px solid black;
-    border-radius: 5px;
-}
-
-.profil{
-
-    width: 100%;
-    border: 3px solid black;
-    border-radius: 5px;
-    
-}
-
 footer{
 
-    width: 100%;
-    border: 3px solid black;
+    text-align: center;
+
+}
+
+button{
+
+    padding:2%;
     border-radius: 5px;
-    
+
+
+}
+
+
+.index:link, .index:visited{
+
+    float:left;
+    display:block;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    font-weight:bold;
+    color:black;
+    text-transform:uppercase;
+    text-decoration:none;
+    width:100%;
+    padding-top:5%;
+    padding-bottom:5%; 
+    text-align: center;
+    border:2px solid black;
+    border-radius: 15px;
     
 }
 
-.index{
+.index2:link, .index2:visited{
 
+    float:left;
+    display:block;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    font-weight:bold;
+    color:black;
+    text-transform:uppercase;
+    text-decoration:none;
+    width:100%; 
     text-align: center;
-    margin:5%;
-    font-size: 35px;
+    border:2px solid black;
+    border-radius: 15px;
     
 }
 
@@ -75,8 +71,8 @@ footer b {
 }
 
 .version{
-
-   float:right;
+    float: right;
+    text-align: right;
 
 }
 .mind{
@@ -94,23 +90,22 @@ footer b {
 
 .options{
 
-    width:30%;
-    min-width:50px;
-    heigth:30%;
-    margin-left:34.5%;
-
+    width: 15%;
+    height: 15%;
 }
 
 .copyright{
-
     float:left;
-
+    text-align: left;  
 
 }
 
 .question{
 
     text-align: center;
+    font-size: 20px;
+    animation: rotateY 1s infinite;
+    animation-play-state: paused;
 
 }
 
@@ -132,16 +127,24 @@ footer b {
 
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 25px;
     color:black;
 
 }
 
 #logo{
 
-    width:35%;
-    heigth:35%;
+    width:25%;
+    height:25%;
     
 
+}
+
+#logoFrage{
+    
+    width: 2%;
+    height: 2%;
+    
 }
 
 #answerTopLeft{
@@ -150,10 +153,14 @@ footer b {
     width:47%;
     border:2px solid grey;
     border-radius:5px;
-    padding-top:10%;
-    padding-bottom:10%;
+    padding-top:8%;
+    padding-bottom:8%;
     font-size: 25px;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    font-size: 25px;
+    
+    animation: trueORfalse 0.5s infinite;
+    animation-play-state: paused;
     
 }
 #answerTopRight{
@@ -163,10 +170,14 @@ footer b {
     border:2px solid grey;
     border-radius:5px;
     margin-right:2%;
-    padding-top:10%;
-    padding-bottom:10%;
+    padding-top:8%;
+    padding-bottom:8%;
     font-size: 25px;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    font-size: 25px;
+    
+    animation: trueORfalse 0.5s infinite;
+    animation-play-state: paused;
 }
 #answerBottomLeft{
 
@@ -174,10 +185,14 @@ footer b {
     width:47%;
     border:2px solid grey;
     border-radius:5px;
-    padding-top:10%;
-    padding-bottom:10%;
+    padding-top:8%;
+    padding-bottom:8%;
     font-size: 25px;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    font-size: 25px;
+    
+    animation: trueORfalse 0.5s infinite;
+    animation-play-state: paused;
 }
 #answerBottomRight{
 
@@ -186,10 +201,14 @@ footer b {
     border:2px solid grey;
     border-radius:5px;
     margin-right:2%;
-    padding-top:10%;
-    padding-bottom:10%;
+    padding-top:8%;
+    padding-bottom:8%;
     font-size: 25px;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    font-size: 25px;
+    
+    animation: trueORfalse 0.5s infinite;
+    animation-play-state: paused;
 }
 
 #changeUserName{
@@ -198,60 +217,163 @@ footer b {
 
 }
 
-#ersteZahl{
-    
-    margin:5%;
-    float:left;
-    margin-left:40%;
-
-}
-
-#operator{
-
-    margin:5%;
-    float:left;
-
-}
-
 #userErgebnis{
 
-    
-    margin:5%;
-    margin-left:42%;
+    width: 200px;
     padding:2%;
     
     
 }
 
-#zweiteZahl{
-
-    margin:5%;
-    float:left;
+#aufgabe{
+    text-align: center;
     
 }
 
-#aufgabe button{
-    
-    margin-left:46%;
-    
-
-}
 
 #aufgabenText{
 
     width:100%;
+    height: 50px;
+    text-align: center;
     
 }
 
-@media screen and (min-width:1000px){
+#antwort{
 
-    .options{
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
     
-        margin-left:35%;
+}
+
+#antwort button{
+
+    padding:1%;
+    border:2px solid aqua;
+    border-radius: 15px;
+    background-color: aqua;
+    
+}
+
+#design{
+
+    text-align: center;
+
+}
+
+.b1{
+
+    border:2px solid aqua;
+    border-radius: 15px;
+    background-color: aqua;
+
+}
+
+@keyframes rotateY {
+    
+    40%  { transform: rotateY(0deg);}
+    50% { transform: rotateY(180deg);}
+    60%{ transform: rotateY(0deg);}
+}
+
+
+@keyframes trueORfalse {
+
+    30% { transform: scale(1.0,1.0); }
+    50% { transform: scale(1.25,1.25); }
+    70%{ transform: scale(1.0,1.0); }
+}
+
+@keyframes reset {
+
+    0% { transform: rotateY(0deg); }
+
+}
+
+
+@media screen and (max-width:720px){
+
+#answerTopLeft{
+
+    float:left;
+    width:97%;
+    border:2px solid grey;
+    border-radius:5px;
+    padding-top:5%;
+    padding-bottom:5%;
+    font-size: 20px;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    
+    animation: trueORfalse 0.5s infinite;
+    animation-play-state: paused;
+    
+    margin: 0px;
+    
+}
+#answerTopRight{
+
+    float:left;
+    width:97%;
+    border:2px solid grey;
+    border-radius:5px;
+    margin-right:2%;
+    padding-top:5%;
+    padding-bottom:5%;
+    font-size: 20px;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    
+    animation: trueORfalse 0.5s infinite;
+    animation-play-state: paused;
+    
+    margin: 0px;
+}
+#answerBottomLeft{
+
+    float:left;
+    width:97%;
+    border:2px solid grey;
+    border-radius:5px;
+    padding-top:5%;
+    padding-bottom:5%;
+    font-size: 20px;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    
+    animation: trueORfalse 0.5s infinite;
+    animation-play-state: paused;
+    
+    margin: 0px;
+}
+#answerBottomRight{
+
+    float:left;
+    width:97%;
+    border:2px solid grey;
+    border-radius:5px;
+    margin-right:2%;
+    padding-top:5%;
+    padding-bottom:5%;
+    font-size: 20px;
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    
+    animation: trueORfalse 0.5s infinite;
+    animation-play-state: paused;
+    
+    margin: 0px;
+}
+
+    .question{
+    
+    font-size:16px;
+    
     
     }
-    
 
 }
+
+
+
+
+
 
 
