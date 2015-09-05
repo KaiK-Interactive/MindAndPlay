@@ -1,0 +1,32 @@
+"Was besagt die 3. Binomische Formel?","(a+b)*(a-b)=a^2+b^2","(a-b)^2=a^2-2+ab+b^2","(a^2)^2=a^4","a^2+b^2=c^2"
+
+
+Werbeslogans
+
+new Question ("Friesisch- herb.","Jever","Jaguar","Jim Beam","Warsteiner"),
+new Question ("The car that cares","Kia","VW","Ford","Infiniti"),
+new Question ("Kleidung clever kaufen bei ...","Kik","Lidl","Aldi","Karstadt"),
+new Question ("Eine Perle der Natur","Krombacher","Bitburger","Kerry Gold","Krups"),
+new Question ("There's no better way to fly","Lufthansa","Germanwings","American Airways","Air Berlin"),
+new Question ("Zum Handeln geschaffen","Metro","Lidl","Wasgau","Netto"),
+new Question ("Connecting people","Nokia","Samsung","Apple","HTC"),
+new Question ("Fisch verliebt","Nordsee","Ostsee","Globus","BoFrost"),
+new Question ("Gefunden auf....","Otto.de","Amazon.de","Ebay.de","Alibaba.de"),
+new Question ("Die Beine Ihres Autos","Pirelli","Bridgestone","Godyear","Dunlop"),
+new Question ("We love to entertain you","Pro7","Sat1","ARD","RTL"),
+new Question ("Nichts ist unmöglich","Toyota","Porsche","Nissan","Daihatsu"),
+new Question ("Geiz ist geil","Saturn","Media Markt","Pro Markt","Alpha Tecc"),
+new Question ("Ich liebe es","McDonalds","Burger King","KFC","Coca Cola"),
+new Question ("Vorsprung durch Technik","Audi","Mercedes","Nissan","Skoda"),
+new Question ("Das Auto","VW","Toyota","Suzuki","Renault"),
+new Question ("Wohnst Du noch oder lebst Du schon...","IKEA","Möbel Martin","XXXL","Dänisches Bettenlager"),
+new Question ("Für das Beste im Mann","Gillette","Nivea","Braun","Philips"),
+new Question ("Wir lieben Hunde","Pedigree","Beneful","Josera","Eukanuba"),
+new Question ("... verleiht Flügel","Red Bull","Fanta","Monster","Guru"),
+new Question ("Damit Sie auch noch morgen kraftvoll zubeißen können","Blend a Med","Signal","Meridol","Elmex"),
+new Question ("Da weiß man was man hat","Persil","Ariel","Spee","Weißer Riese"),
+new Question ("Gesunde Vitamine naschen","Nimm2","Trolli","Emmi","Ikea"),
+new Question ("Ihr guter Stern auf allen Straßen","Mercedes","Peugeot","Citroen","Ford"),
+new Question ("Bezahlen Sie einfach mit ihrem guten Namen","American Express","Postbank","Bank of China","PSD Bank"),
+
+

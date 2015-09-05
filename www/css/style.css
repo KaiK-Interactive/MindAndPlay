@@ -24,11 +24,17 @@ footer{
 button{
 
     padding:2%;
-    border-radius: 5px;
-
+    border-radius: 25px;
+    width:50%;
+    background-color: lightblue;
 
 }
 
+select{
+    
+    padding:1%;
+    
+}
 
 .index:link, .index:visited{
 
@@ -43,8 +49,14 @@ button{
     padding-top:5%;
     padding-bottom:5%; 
     text-align: center;
-    border:2px solid black;
-    border-radius: 15px;
+    border-radius: 25px;
+    margin:0.5%;
+    
+}
+
+.index:hover{
+    
+    background: linear-gradient(to bottom left, #396AEF 0%, #FFEB38 100%);
     
 }
 
@@ -59,8 +71,13 @@ button{
     text-decoration:none;
     width:100%; 
     text-align: center;
-    border:2px solid black;
-    border-radius: 15px;
+    border-radius: 25px;
+    
+}
+
+.index2:hover{
+    
+     background: linear-gradient(to bottom left, #396AEF 0%, #FFEB38 100%);
     
 }
 
@@ -132,6 +149,39 @@ footer b {
 
 }
 
+.a2:link, .a2:visited{
+    
+    text-decoration: none;
+    text-transform: uppercase;
+    width:50%;
+    display: inline-block;
+    font-size: 25px;
+    color:black;
+    background-color: lightgray;
+    border-radius: 25px;
+    padding:2%;
+    
+}
+
+.data{
+    
+    background-color: white;
+    border-radius: 40px;
+}
+
+.s2{
+    
+    background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
+    border-radius: 25px;
+    margin: 2%;
+}
+
+input{
+    
+    width: 50%;
+    
+}
+
 #logo{
 
     width:25%;
@@ -151,11 +201,11 @@ footer b {
 
     float:left;
     width:47%;
-    border:2px solid grey;
-    border-radius:5px;
+    border-radius:25px;
     padding-top:8%;
     padding-bottom:8%;
     font-size: 25px;
+    font-weight: bold;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
     font-size: 25px;
     
@@ -167,12 +217,12 @@ footer b {
 
     float:right;
     width:47%;
-    border:2px solid grey;
-    border-radius:5px;
+    border-radius:25px;
     margin-right:2%;
     padding-top:8%;
     padding-bottom:8%;
     font-size: 25px;
+    font-weight: bold;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
     font-size: 25px;
     
@@ -183,11 +233,11 @@ footer b {
 
     float:left;
     width:47%;
-    border:2px solid grey;
-    border-radius:5px;
+    border-radius:25px;
     padding-top:8%;
     padding-bottom:8%;
     font-size: 25px;
+    font-weight: bold;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
     font-size: 25px;
     
@@ -198,12 +248,12 @@ footer b {
 
     float:right;
     width:47%;
-    border:2px solid grey;
-    border-radius:5px;
+    border-radius:25px;
     margin-right:2%;
     padding-top:8%;
     padding-bottom:8%;
     font-size: 25px;
+    font-weight: bold;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
     font-size: 25px;
     
@@ -291,6 +341,13 @@ footer b {
 
 }
 
+@keyframes hardcoreAnimation {
+    
+    from { background-color: none;}
+    to {background-color: orange;}
+    
+}
+
 
 @media screen and (max-width:720px){
 
@@ -298,10 +355,9 @@ footer b {
 
     float:left;
     width:97%;
-    border:2px solid grey;
-    border-radius:5px;
-    padding-top:5%;
-    padding-bottom:5%;
+    border-radius:25px;
+    padding-top:10%;
+    padding-bottom:10%;
     font-size: 20px;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
     
@@ -309,17 +365,17 @@ footer b {
     animation-play-state: paused;
     
     margin: 0px;
+    margin-left:1%;
     
 }
 #answerTopRight{
 
     float:left;
     width:97%;
-    border:2px solid grey;
-    border-radius:5px;
+    border-radius:25px;
     margin-right:2%;
-    padding-top:5%;
-    padding-bottom:5%;
+    padding-top:10%;
+    padding-bottom:10%;
     font-size: 20px;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
     
@@ -327,15 +383,17 @@ footer b {
     animation-play-state: paused;
     
     margin: 0px;
+    
+    margin-top:1%;
+    margin-left:1%;
 }
 #answerBottomLeft{
 
     float:left;
     width:97%;
-    border:2px solid grey;
-    border-radius:5px;
-    padding-top:5%;
-    padding-bottom:5%;
+    border-radius:25px;
+    padding-top:10%;
+    padding-bottom:10%;
     font-size: 20px;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
     
@@ -343,16 +401,18 @@ footer b {
     animation-play-state: paused;
     
     margin: 0px;
+    
+    margin-top:1%;
+    margin-left:1%;
 }
 #answerBottomRight{
 
     float:left;
     width:97%;
-    border:2px solid grey;
-    border-radius:5px;
+    border-radius:25px;
     margin-right:2%;
-    padding-top:5%;
-    padding-bottom:5%;
+    padding-top:10%;
+    padding-bottom:10%;
     font-size: 20px;
     background: linear-gradient(to bottom left, #FFEB38 0%, #396AEF 100%);
     
@@ -360,6 +420,9 @@ footer b {
     animation-play-state: paused;
     
     margin: 0px;
+    
+    margin-top:1%;
+    margin-left:1%;
 }
 
     .question{

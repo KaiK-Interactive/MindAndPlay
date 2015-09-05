@@ -21,14 +21,15 @@
             <b class ="userName"></b> <b class="score"></b>
         </section>
         
-        <section style="text-align:center;">
-            
+        <section class="s2" style="text-align:center;">
+            <h2>Dein Profil:</h2>
             <p id="profilstatus">Profilstatus: lokales Profil</p>
-            <p>Serverstatus: coming soon</p>
+            <p>Fragen: lokal</p>
+            <p id="rank"></p>
         
         </section>
         
-        <section style="text-align:center;">
+        <section class="s2" style="text-align:center;">
             
             <h2>Statistiken:</h2>
             <h3>Deine bisherigen Leistungen:</h3>
@@ -40,7 +41,7 @@
             
         </section>
         
-        <section style="text-align:center;">
+        <section class="s2" style="text-align:center;">
         
             <p>Vielen Dank für deine Interesse an <b>Mind and Play</b></p>
             <p>Besuche uns auch gerne <a href="http://kaik-interactive.github.io">online</a></p>
@@ -53,6 +54,9 @@
         
     <script>
         loadLokaleStatistiken();
+        
+        document.getElementById("rank").innerHTML = "Höchstes Archievment: " + window.localStorage.getItem("rank");
+        
     </script>
     </body>
 

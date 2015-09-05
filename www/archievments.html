@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>MindAndPlay</title>
+		
+		<style>
+			
+			p{
+				
+				padding: 2%;
+				border-radius: 40px;
+			}
+			
+		</style>
+		
+    </head>
+    <body>
+       
+        <header>
+            <!-- Logo -->
+            <img id="logo" src="img/MindAndPlay.png">
+        </header>
+        
+        <section>
+            <h2 class="mind">Mind and Play</h2>
+            <b class ="userName"></b> <b class="score"></b>
+        </section>
+		
+		<section style="text-align:center">
+			<h1>Deine bisher ereichten Archievments</h1>
+			<p id="neuling">Neuling</p>
+			<p id="gelegenheitsspieler">Gelegenheitsspieler</p>
+			<p id="amateur">Amateur</p>
+			<p id="profi">Profi</p>
+			<p id="weltklasse">Weltklasse</p>
+			<p id="masterOfQuestions">Master of Questions</p>
+        
+		</section>
+  
+         <script src="js/mindAndPlay.js"></script>  
+		 
+		 <script>
+			 
+			 var rank = "";
+			 
+			 if(score >= 50){
+				 
+				 document.getElementById("neuling").style.backgroundColor = "green";
+				 rank = "Neuling";
+				 
+			 }
+			 if(score >= 250){
+				 
+				 document.getElementById("gelegenheitsspieler").style.backgroundColor = "green";
+				 rank = "Gelegenheitsspieler"
+				 
+			 }
+			 if(score >= 500){
+				 
+				 document.getElementById("amateur").style.backgroundColor = "green";
+				 rank = "Amateur"
+				 
+			 }
+			 if(score >= 1250){
+				 
+				  document.getElementById("profi").style.backgroundColor = "green";
+				  rank = "Profi";
+				 
+			 }
+			 if(score >= 2500){
+				 
+				  document.getElementById("weltklasse").style.backgroundColor = "green";
+				  rank = "Weltklasse";
+				 
+			 }
+			 if(score >= 5000){
+				 
+				  document.getElementById("masterOfQuestions").style.backgroundColor = "green";
+				  rank = "Master of Questions";
+				 
+			 }
+			 
+			 window.localStorage.setItem("rank",rank);
+			 
+		 </script> 
+            
+    </body>
+</html>

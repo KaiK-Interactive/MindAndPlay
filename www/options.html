@@ -28,7 +28,7 @@
             <b class ="userName"></b> <b class="score"></b>
         </section>
         
-        <section id="changeUserName">
+        <section class="s2" id="changeUserName">
             
             <p>Neuer UserName:</p>
             <input id="newUserName" type="text">
@@ -36,13 +36,13 @@
             
         </section>
         
-        <section style="text-align:center;">
+        <section class="s2" style="text-align:center;">
         
             <button onclick="resetScore()">Score zurücksetzen:</button>
         
         </section>
         
-        <section id="design">
+        <section class="s2" id="design">
             
             <p>Design anpassen:</p>
             
@@ -51,10 +51,20 @@
             <option id="default">Default</option>
             <option id="minimal">Minimal</option>
             <option id="dark">Dunkel</option>
+            <option id="luxury">Luxus</option>
             
             </select>
+            
             <p><button onclick="changePreset()">übernehmen</button></p>
-            <p>Hinweis: Änderungen treten erst nach verlassen der Optionen in Kraft.</p>
+            <p>Hinweis: manche Änderungen treten erst nach verlassen der Optionen in Kraft.</p>
+            
+            <h3>Erweiterte Design-Einstellungen:</h3>
+            <p>Hintergrund: <input id="customBackground" type="text"></p>
+            <p>Buttons: <input id="customButtons" type="text"></p>
+            <p>Infomenus: <input id="customInfo" type="text"></p>
+            <p>Schrift: <input id="color" type="text"></p>
+            <button onclick="customDesign()">übenehmen</button>
+            
         </section>
     
     
@@ -78,6 +88,10 @@
             
                 document.getElementById("dark").selected = true;
             
+            } else if(select === "luxury"){
+                
+                document.getElementById("luxury").selected = true;
+                
             }
             
             function changePreset(){
@@ -85,6 +99,7 @@
                 var de = document.getElementById("default").selected;
                 var min = document.getElementById("minimal").selected;
                 var d = document.getElementById("dark").selected;
+                var lux = document.getElementById("luxury").selected;
                 console.log(de);
                 console.log(min);
                 console.log(d);
@@ -93,20 +108,45 @@
                 
                     console.log("Default");
                     savePreset("default");
+                    disableCustomDesign();
                 
                 } else if(min === true){
                 
                     console.log("Minimal");
                     savePreset("minimal");
+                    saveDesign("blue","lightBlue","lightblue");
+                    enableCustomDesign();
                 
                 } else if(d === true){
                 
                     console.log("Dark");
                     savePreset("dark");
+                    var color1 = "rgb(0,0,0)";        
+                    var color2 = "rgb(153, 153, 153)";
+        
+                    var text = "linear-gradient(to bottom left, " + color1 + " 0%, " + color2 + " 100%)";
+        
+                   saveDesign(text,text,"grey","white");
+                   enableCustomDesign();
                 
-                }
+               } else if(lux === true){
+                   
+                   savePreset("luxury");
+                   
+                   saveDesign("linear-gradient(to bottom left, blue 0%, gold 100%)","gold","linear-gradient(to bottom left, gold 0%, blue 100%)", "silver");
+                   enableCustomDesign();
+                   
+               }
+                
+                
                 
             };
+            
+           document.getElementById("customBackground").value = background;
+           document.getElementById("customButtons").value = buttoncolor;
+           document.getElementById("customInfo").value = sections;
+           document.getElementById("color").value = color;
+           
         
         </script>
     </body>

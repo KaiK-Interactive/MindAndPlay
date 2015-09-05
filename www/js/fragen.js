@@ -34,12 +34,16 @@
     
 */
 
-var question; 
+var question = new Question(1,"","","","",""); 
+var serverQuestion;
 var kategorie;
 var richtig = 0;
 var falsch = 0;
 var disableAnimations = false;
 var counter = 0;
+var error = false;
+var alreadyAsked = [10];
+//loadFromServer();
 
 // Fragen-Objekt Prototype
 function Question( id, question, correctAnswer, answer2, answer3, answer4){
@@ -61,7 +65,28 @@ function Question( id, question, correctAnswer, answer2, answer3, answer4){
 function run(kate){
     
     kategorie = kate;
-     
+    
+    for(var i = 0; i < 10; i++){
+        
+        var random = randomNumber(10) + 1;
+        
+        for(var a = 0; a < 40; a++){
+            
+            if(random === alreadyAsked[a]){
+                
+                random = randomNumber(10) + 1;
+                
+            }else {
+                
+                
+            }
+            
+        }
+        
+        alreadyAsked[i] = random;
+   
+    }
+    console.log("Array" + alreadyAsked);
     loadQuestion();
     
          
@@ -101,7 +126,8 @@ function saveQuestionsOnDevice(){
 */
 function loadQuestion(){
     
-    
+    checkPreset();
+    customButtons();
     
     if(counter === 10){
         saveSession();
@@ -109,7 +135,8 @@ function loadQuestion(){
     
     }
     
-    counter++;
+    
+    
     
     document.getElementById("answerTopLeft").addEventListener("click", checkAnswer1);
     document.getElementById("answerTopRight").addEventListener("click" ,checkAnswer2);
@@ -118,6 +145,23 @@ function loadQuestion(){
     
     resetAnimation();
     
+    if(error === false){
+        
+            
+        loadFromServer(kategorie, alreadyAsked[counter]);
+            
+        question = serverQuestion;
+        
+    } 
+        
+    setTimeout('prepareQuestion()',500);
+        
+    counter++;
+};
+function prepareQuestion(){
+    
+    if(error === true){
+    
     if(kategorie == null){
     
         console.log("Keine Kategorie gewählt.");
@@ -125,7 +169,7 @@ function loadQuestion(){
     }
     if(kategorie === "random"){
         
-        var random = randomNumber(5) + 1;
+        var random = randomNumber(6) + 1;
     
         console.log(random);
         if( random === 1 ){
@@ -148,6 +192,10 @@ function loadQuestion(){
         
             var temp = JSON.parse(window.localStorage.getItem("politik"));
         
+        } else if (random === 6){
+            
+            var temp = JSON.parse(window.localStorage.getItem("erdkunde"));
+            
         }
         
         
@@ -158,9 +206,17 @@ function loadQuestion(){
         
     }
     
-    get = randomNumber(temp.length);
-    
+    var get = randomNumber(temp.length);
+    //console.log(serverQuestion.question);
+
+            
     question = temp[get];
+    
+    } else {
+        
+        question = serverQuestion;
+        
+    }
     
     //console.log(question.question);
     document.getElementById("question").innerHTML = question.question;
@@ -524,6 +580,64 @@ function saveSession(){
 
 };
 
+function customButtons(){
+  
+  if(buttoncolor != "default"){
+     document.getElementById("answerTopLeft").style.background = "none";
+     document.getElementById("answerTopLeft").style.background = buttoncolor;
+        
+     document.getElementById("answerTopRight").style.background = "none";
+     document.getElementById("answerTopRight").style.background = buttoncolor;
+        
+     document.getElementById("answerBottomLeft").style.background = "none";
+     document.getElementById("answerBottomLeft").style.background = buttoncolor;
+        
+     document.getElementById("answerBottomRight").style.background = "none";
+     document.getElementById("answerBottomRight").style.background = buttoncolor;
+     
+     document.getElementsByTagName("body")[0].style.background = background;
+  }
+};
+
+function loadFromServer(topic,id){
+    
+    var number = id;
+    console.log(number);
+    var topic = topic;
+    var array = [5];
+    
+    datenbankAufruf();
+    
+
+    function datenbankAufruf() {
+        $.ajax({
+            type: 'POST',
+            url: 'https://kaikarren.de/fragen.php',
+            data: {
+                 id: number,
+                 topic: topic
+            },
+            dataType: 'jsonp',
+            success: function (jsonData) {
+            console.log("SUCCESS");
+            daten = jsonData; 
+            array = daten;
+            console.log(array);
+            serverQuestion = new Question(2000,array[0],array[1],array[2],array[3],array[4]);
+            
+            },
+            error: function (jqXHR, exception) {
+                error = true;
+            },
+            complete: function () {
+
+            }
+        });
+ 
+}
+
+    
+};
 
 
 
