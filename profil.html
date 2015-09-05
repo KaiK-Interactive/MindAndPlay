@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+    
+    <head>
+    
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+    </head>
+    
+    <body>
+        
+        <header>
+            <!-- Logo -->
+            <img id="logo" src="img/MindAndPlay.png">
+        </header>
+        
+        <section>
+            <h2 class="mind">Mind and Play</h2>
+            <b class ="userName"></b> <b class="score"></b>
+        </section>
+        
+        <section class="s2" style="text-align:center;">
+            <h2>Dein Profil:</h2>
+            <p id="profilstatus">Profilstatus: lokales Profil</p>
+            <p>Fragen: lokal</p>
+            <p id="rank"></p>
+        
+        </section>
+        
+        <section class="s2" style="text-align:center;">
+            
+            <h2>Statistiken:</h2>
+            <h3>Deine bisherigen Leistungen:</h3>
+            <p><b>Richtige Antworten: </b><b id="richtigeAntworten"></b></p>
+            <p><b>Falsche Antworten: </b><b id="falscheAntworten"></b></p>
+            <b id="besteKategorie"></b>
+            <b id="schlechtesteKategorie"></b>
+            
+            
+        </section>
+        
+        <section class="s2" style="text-align:center;">
+        
+            <p>Vielen Dank für deine Interesse an <b>Mind and Play</b></p>
+            <p>Besuche uns auch gerne <a href="http://kaik-interactive.github.io">online</a></p>
+            <p>Feedback, Ideen oder befundene Bugs bitte an <b>mindandplay@kaikarren.de</b> senden</p>
+            
+        </section>
+     
+        
+        <script src="js/mindAndPlay.js"></script>
+        
+    <script>
+        loadLokaleStatistiken();
+        
+        document.getElementById("rank").innerHTML = "Höchstes Archievment: " + window.localStorage.getItem("rank");
+        
+    </script>
+    </body>
+
+</html>

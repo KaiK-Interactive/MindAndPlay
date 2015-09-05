@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>MindAndPlay</title>
+    </head>
+    <body>
+        
+        <section>
+            <b class ="userName"></b> <b class="score"></b>
+        </section>
+        
+        <section class="data" style="text-align:center">
+            
+        <h2>Auswertung:</h2>
+        <p id="richtig"></p>
+        <p id="falsch"></p>
+        <p id="beurteilung"></p>
+        <p><a class="a2" id="weiter" href="">Fortfahren</a></p>
+        <p><a class="a2" href="index.html">Hauptmenu</a></p>
+            
+        </section>
+  
+        <script src="js/mindAndPlay.js"></script> 
+        <script>
+        
+            document.getElementById("richtig").innerHTML = "Richtig: " + window.localStorage.getItem("richtig");
+            
+            document.getElementById("falsch").innerHTML = "Falsch: " + window.localStorage.getItem("falsch");
+            
+            var r = window.localStorage.getItem("richtig");
+            var f = window.localStorage.getItem("falsch");
+            
+            if( r === 10){
+            
+                document.getElementById("beurteilung").innerHTML = "Perfect!";
+            
+            } else if( r >= 6 ){
+            
+                document.getElementById("beurteilung").innerHTML = "Sehr gut";
+            
+            } else if( r >= 5 ){
+            
+                document.getElementById("beurteilung").innerHTML = "Da geht noch mehr!";
+            
+            }else if( f === 10){
+            
+                 document.getElementById("beurteilung").innerHTML = "Was war denn los?";
+            
+            } else if( f >= 4){
+            
+                document.getElementById("beurteilung").innerHTML = "Oh je da musst du noch üben!!";
+            
+            }
+            
+            else {
+            
+                 document.getElementById("beurteilung").innerHTML = "Dein Ergebnis ist noch ausbaufähig!";
+            
+            }
+            
+            window.localStorage.setItem("richtig",0);
+            window.localStorage.setItem("falsch",0);
+            
+            temp = window.localStorage.getItem("kategorie") + ".html";
+            
+            if(window.localStorage.getItem("kategorie") === "random"){
+            
+                temp = "frage.html";
+            
+            }
+            
+            document.getElementById("weiter").href= temp;
+        
+        </script>
+            
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    </head>
+    
+    <body class="frage">
+        
+        <header>
+           
+           
+        </header>
+        <section>
+            <b class ="userName"></b> <b class="score"></b>
+        </section>
+        
+        <section class="question">
+            
+            <h2 id="question"></h2>
+            <p id="answerTopLeft"> </p>
+            <p id="answerTopRight"> </p>
+            <p id="answerBottomLeft"> </p>
+            <p id="answerBottomRight"> </p>
+            
+        
+        </section>
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/mindAndPlay.js"></script>
+        <script src="js/erdkunde.js"></script>
+        <script src="js/fragen.js"></script>
+        
+        <script>
+            saveErdkundeOnDevice();
+            run("erdkunde");
+        </script>
+    
+    </body>
+
+</html>

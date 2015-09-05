@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			
+		function DatenbankAufruf() {
+    		$.ajax({
+       		type: 'GET',
+       	 	url: 'https://kaikarren.de/fragen.php',
+        	data: {
+           		 name1: Variable1 //,
+           		 //name2: Variable2
+        	},
+        	dataType: 'jsonp',
+        	success: function (jsonData) {
+           		 alert("SUCCESS");
+            	 daten = jsonData; // Sichert die Callback-Daten in der Globalen Variable daten
+			console.log(daten);
+            
+        	},
+        	error: function (jqXHR, exception) {
+            	alert("ERROR")
+        	},
+        	complete: function () {
+            
+       	 	}
+    	});
+}
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<button onclick="DatenbankAufruf()">Click me</button>
+		
+	</body>
+	
+</html>

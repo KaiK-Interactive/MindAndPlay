@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        
     
     </head>
     
@@ -13,10 +14,9 @@
         
         <header>
             <!-- Logo -->
-            <img id="logo" src="img/MindAndPlay.png">
+           <!-- <img id="logoFrage" src="img/MindAndPlay.png"> -->
         </header>
         <section>
-            <h2 class="mind">Mind and Play</h2>
             <b class ="userName"></b> <b class="score"></b>
         </section>
         
@@ -31,11 +31,14 @@
         
         </section>
         
+        <script src="js/jquery-2.1.1.min.js"></script>
         <script src="js/mindAndPlay.js"></script>
         <script src="js/geschichte.js"></script>
         <script src="js/sport.js"></script>
         <script src="js/chemie.js"></script>
         <script src="js/essenUndTrinken.js"></script>
+        <script src="js/politik.js"></script>
+        <script src="js/erdkunde.js"></script>
         <script src="js/fragen.js"></script>
         
         <script>
@@ -43,6 +46,8 @@
             saveChemieOnDevice();
             saveSportOnDevice();
             saveEssenUndTrinkenOnDevice();
+            savePolitikOnDevice();
+            saveErdkundeOnDevice();
             run("random");
             
         </script>

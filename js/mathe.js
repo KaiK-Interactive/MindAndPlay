@@ -4,11 +4,12 @@ Version 0.1
 
 */
 var ergebnis;
+var max;
    
 function simpleMath(){
     
-    var zahl1 = randomNumber(20) + 1;
-    var zahl2 = randomNumber(20) + 1;
+    var zahl1 = randomNumber(max) + 1;
+    var zahl2 = randomNumber(max) + 1;
     
     var temp = randomNumber(400);
     
@@ -61,6 +62,39 @@ function checkUserInput(){
         document.getElementById("auswertung").innerHTML = ergebnis;
     }
     
+    setTimeout('reset()',2000);
+
+}
+
+function reset(){
+
+    document.getElementById("aufgabe").style.backgroundColor = "";
+    document.getElementById("userErgebnis").value = "";
+    document.getElementById("auswertung").innerHTML = "";
+    simpleMath();
+    
+};
+
+function loadMax(){
+
+    max = window.localStorage.getItem("maxNumber");
+
+};
+
+function saveMax(number){
+
+    max = number;
+    max = window.localStorage.setItem("maxNumber",max);
+
+};
+
+if(null !==  window.localStorage.getItem("maxNumber") ){
+
+    max =  window.localStorage.getItem("maxNumber");
+
+} else {
+
+    max = 10;
 
 }
 
